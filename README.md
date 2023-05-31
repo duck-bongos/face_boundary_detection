@@ -2,13 +2,6 @@
 A package to find the boundary of a 3D face object, given an input image and input object. It can be used as a way to automate or partially automate facial trimming. Its initial use was for geometric processing.
 
 ## Installation
-```
-pip install git+ssh://git@github.com/duck-bongos/
-https://github.com/duck-bongos/facial_boundary_detection.git
-```
-
-
-## Running boundary detection
 ### Step 0: Create Environment
 ```
 python3 -m venv venv_name
@@ -17,13 +10,14 @@ cd boundary_detection/
 
 ### Step 1: Install Dependencies
 If you don't already have poetry installed, you can install it using 
-```pip install poetry```
+```pip3 install poetry```
 
-Then you can install the dependencies by running:
+Then you can install the dependencies by running the following command at the same level as the `pyproject.toml` file:
 ```poetry install```
 
 To see a list of the current dependencies, you can view the `pyproject.toml` file.
 
+## Running boundary detection
 ### Step 2: Run Boundary Detection
 #### 2.1 General useage:
 Poetry installs a command-line argument, `fbd` (for brevity), that you can use like this:
