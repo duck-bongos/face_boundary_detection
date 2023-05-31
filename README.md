@@ -13,7 +13,9 @@ If you don't already have poetry installed, you can install it using
 ```pip3 install poetry```
 
 Then you can install the dependencies by running the following command at the same level as the `pyproject.toml` file:
-```poetry install```
+```
+poetry install
+```
 
 To see a list of the current dependencies, you can view the `pyproject.toml` file.
 
