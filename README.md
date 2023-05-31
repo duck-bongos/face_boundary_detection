@@ -9,6 +9,8 @@ cd boundary_detection/
 ```
 
 ### Step 1: Install Dependencies
+The first step is to clone this repository to a location of your choice.
+
 If you don't already have poetry installed, you can install it using 
 ```pip3 install poetry```
 
