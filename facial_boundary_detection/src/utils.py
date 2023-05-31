@@ -47,6 +47,7 @@ def get_boundary_fpath(fname: Path, **kwargs) -> str:
         else:
             new_path = new_path.with_suffix(f".{extension}")
 
+    Path(new_path).parent.mkdir(parents=True, exist_ok=True)
     return new_path.as_posix()
 
 
@@ -55,6 +56,10 @@ def get_new_fpath(fname: Path, new_dir: str):
     data_dir = fname.parent
     path_ = data_dir / new_dir / fname.stem
     new_path = path_.with_suffix(extension)
+    
+    # Ensure the path to the file exists
+    Path(new_path).parent.mkdir(parents=True, exist_ok=True)
+
     return new_path.as_posix()
 
 
@@ -201,7 +206,7 @@ def write_points(
     point_dir: str = "keypoints",
 ):
     fpath_metrics = get_new_fpath(fpath_out, point_dir)
-    with open(fpath_metrics, "w") as fmp:
+    with open(fpath_metrics, "w+") as fmp:
         for k, v in keypoints.items():
             vox = v["xyz"]
             fmp.write(f"{k} {' '.join([str(v) for v in vox])}\n")

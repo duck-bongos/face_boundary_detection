@@ -1,22 +1,25 @@
-[build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
-
-[project]
-name = "facial-boundary-detection"
-version = "0.0.1"
-authors = [
-    { name="Dan Billmann", email="dan.billmann.13@gmail.com" }
-]
+[tool.poetry]
+name = "facial_boundary_detection"
+version = "0.1.0"
 description = "A package to find the boundary of a 3D face object, given an input image and input object."
+authors = ["Dan Billmann <dan.billmann.13@gmail.com>"]
+license = "Apache 2.0"
 readme = "README.md"
-requires-python = ">=3.7"
-classifiers = [
-    "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: Apache 2.0 License",
-    "Operating System :: MacOS, Linux, Windows",
-]
+packages = [{include = "facial_boundary_detection"}]
 
-[project.urls]
-"Homepage" = "https://github.com/duck-bongos/facial_boundary_detection"
-"Bug Tracker" = "https://github.com/duck-bongos/facial_boundary_detection/issues"
+[tool.poetry.dependencies]
+python = "^3.10"
+mediapipe = "0.9.1.0"
+numpy = "1.24.2"
+opencv-python = "4.7.0.72"
+opencv-contrib-python = "4.7.0.72"
+python-box = "7.0.1"
+pymeshlab = "2022.2.post3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+fbd = "facial_boundary_detection.main:run"

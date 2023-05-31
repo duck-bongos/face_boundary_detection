@@ -1,10 +1,12 @@
+import os
 from pathlib import Path
 
-from src.keypoints import run_keypoints
-from src.pipeline import run_pipeline
-from src.utils import parse_cli
+from facial_boundary_detection.src.utils import parse_cli
+from facial_boundary_detection.src.keypoints import run_keypoints
+from facial_boundary_detection.src.pipeline import run_pipeline
 
-if __name__ in "__main__":
+def run():
+    os.chdir(os.path.dirname(__file__))
     args = parse_cli()
     fpath_img = Path(args.image_path)
     fpath_obj = Path(args.obj_path)
@@ -27,3 +29,6 @@ if __name__ in "__main__":
             fpath_chunk=fpath_chunk,
             debug=args.debug,
         )
+
+if __name__ in "__main__":
+    run()
