@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "facial-boundary-detection"
+version = "0.0.1"
+authors = [
+    { name="Dan Billmann", email="dan.billmann.13@gmail.com" }
+]
+description = "A package to find the boundary of a 3D face object, given an input image and input object."
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache 2.0 License",
+    "Operating System :: MacOS, Linux, Windows",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/duck-bongos/facial_boundary_detection"
+"Bug Tracker" = "https://github.com/duck-bongos/facial_boundary_detection/issues"
